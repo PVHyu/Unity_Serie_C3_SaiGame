@@ -6,7 +6,7 @@ public class ShipShooting : MonoBehaviour
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected Transform bulletPrefab;
 
-    void FixedUpdate()
+    void Update()
     {
         this.Shooting();
     }
@@ -15,7 +15,9 @@ public class ShipShooting : MonoBehaviour
     {
         if(!this.isShooting) return;
 
-        Instantiate(this.bulletPrefab);
+        Vector3 spawnPos = transform.position;
+        Quaternion rotation = transform.parent.rotation;
+        Instantiate(this.bulletPrefab, spawnPos, rotation);
         Debug.Log("Shooting");
     }
 }
