@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
   mouseWorldPos: {x: 0, y: 0, z: 0}
+  onFiring: 0
 --- !u!1 &259026606
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e22a31c0f439dc49b1515c609272116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  isShooting: 1
+  isShooting: 0
   bulletPrefab: {fileID: 912982762}
 --- !u!1 &619394800
 GameObject:

@@ -8,6 +8,12 @@ public class ShipShooting : MonoBehaviour
 
     void Update()
     {
+        this.IsShooting();
+        
+    }
+
+    void FixedUpdate()
+    {
         this.Shooting();
     }
 
@@ -19,5 +25,11 @@ public class ShipShooting : MonoBehaviour
         Quaternion rotation = transform.parent.rotation;
         Instantiate(this.bulletPrefab, spawnPos, rotation);
         Debug.Log("Shooting");
+    }
+
+    protected virtual bool IsShooting()
+    {
+        this.isShooting = InputManager.Instance.OnFiring == 1;
+        return this.isShooting;
     }
 }
