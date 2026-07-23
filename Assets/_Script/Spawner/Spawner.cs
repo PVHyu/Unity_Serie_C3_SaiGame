@@ -1,19 +1,12 @@
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class Spawner : SaiMonoBehaviour
+public abstract class Spawner : SaiMonoBehaviour
 {
-    private static Spawner instance;
     [SerializeField] protected List<Transform> prefabs;
 
-    public static Spawner Instance => instance;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        Spawner.instance = this;
-    }
 
     protected override void LoadComponents()
     {
@@ -43,10 +36,28 @@ public class Spawner : SaiMonoBehaviour
         }
     } 
 
-    public virtual Transform Spawn(Vector3 spawnPos, Quaternion rotation)
+    public virtual Transform Spawn(string prefabName, Vector3 spawnPos, Quaternion rotation)
     {
-        Transform prefab = this.prefabs[0];
+        
+        Transform prefab = this.GetPrefabByName(prefabName);
+
+        if(prefab == null)
+        {
+            Debug.LogWarning("Prefab not found:  " + prefabName);
+            return null;
+        }
+
         Transform newPrefab = Instantiate(prefab, spawnPos, rotation);
         return newPrefab;
+    }
+
+    public virtual Transform GetPrefabByName(string prefabName)
+    {
+        foreach(Transform prefab in this.prefabs)
+        {
+            if(prefab.name == prefabName) return prefab;
+        }
+
+        return null;
     }
 }
