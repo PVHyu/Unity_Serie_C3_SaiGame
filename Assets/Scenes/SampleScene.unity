@@ -1001,31 +1001,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1840592037}
-  - component: {fileID: 1840592036}
+  - component: {fileID: 1840592038}
+  - component: {fileID: 1840592040}
+  - component: {fileID: 1840592039}
   m_Layer: 0
   m_Name: JunkSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1840592036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840592035}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 976ba12fa77545d44b06caf73a624973, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletSpawner
-  holder: {fileID: 2060269662}
-  spawnedCount: 0
-  prefabs:
-  - {fileID: 1592112667}
-  poolObjs: []
+  m_IsActive: 1
 --- !u!4 &1840592037
 Transform:
   m_ObjectHideFlags: 0
@@ -1043,6 +1028,49 @@ Transform:
   - {fileID: 2060269662}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1840592038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840592035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1559a63728d22444a6a14ec3139f240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JunkSpawner
+  holder: {fileID: 2060269662}
+  spawnedCount: 0
+  prefabs:
+  - {fileID: 1592112667}
+  poolObjs: []
+--- !u!114 &1840592039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840592035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2176e6b5f3d2d2644bff4968e7c921e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JunkRandom
+  junkCtrl: {fileID: 1840592040}
+--- !u!114 &1840592040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840592035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3947eb6f3af40546b7d76beb38fb80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JunkCtrl
+  junkSpawner: {fileID: 1840592038}
 --- !u!1 &1953717154
 GameObject:
   m_ObjectHideFlags: 0

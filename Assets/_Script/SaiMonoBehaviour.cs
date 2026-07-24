@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SaiMonoBehaviour : MonoBehaviour
 {
-    protected void Start()
+    protected virtual void Start()
     {
         //For override
     }
