@@ -362,10 +362,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 485658054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb46eb040d279e449a5d3a5a7afa433, type: 3}
+  m_Script: {fileID: 11500000, guid: c733021144f6e114d90dc17fdb2f11ad, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DamageSender
+  m_EditorClassIdentifier: Assembly-CSharp::BulletDamSender
   damage: 1
+  bulletCtrl: {fileID: 912982763}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd650255063c3c409ba85d3389c0376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletCtrl
-  damageSender: {fileID: 485658056}
+  damageSender: {fileID: 0}
   bulletDespawn: {fileID: 1096439360}
   shooter: {fileID: 0}
 --- !u!1 &1096439358
@@ -1422,6 +1423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JunkCtrl
   model: {fileID: 1470905641}
+  junkDespawn: {fileID: 0}
 --- !u!1 &1783394694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,7 +1466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1784471088}
   - component: {fileID: 1784471090}
-  - component: {fileID: 1784471089}
+  - component: {fileID: 1784471091}
   m_Layer: 0
   m_Name: DamageReceiver
   m_TagString: Untagged
@@ -1487,22 +1489,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1592112667}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1784471089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784471087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b64ffd1b150e94e418859599ed0c5333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DamageReceiver
-  sphereCollider: {fileID: 1784471090}
-  hp: 2
-  hpMax: 2
-  isDead: 0
 --- !u!135 &1784471090
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1522,8 +1508,25 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.26940173
+  m_Radius: 0.2
   m_Center: {x: -0.0095255375, y: -0.0027216673, z: 0}
+--- !u!114 &1784471091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784471087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6867e6dbc66b0434096525b0d694468f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JunkDamReceiver
+  sphereCollider: {fileID: 1784471090}
+  hp: 2
+  hpMax: 2
+  isDead: 0
+  junkCtrl: {fileID: 1592112668}
 --- !u!1 &1840592035
 GameObject:
   m_ObjectHideFlags: 0

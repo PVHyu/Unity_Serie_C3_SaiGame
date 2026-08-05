@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DamageSender : SaiMonoBehaviour
 {
-    [SerializeField] protected double damage = 1;
+    [SerializeField] protected int damage = 1;
 
     public virtual void Send(Transform obj)
     {
@@ -23,7 +23,7 @@ public class DamageSender : SaiMonoBehaviour
     }
 
 
-    public virtual void SetDamage(double damage)
+    public virtual void SetDamage(int damage)
     {
         this.damage = damage;
     }

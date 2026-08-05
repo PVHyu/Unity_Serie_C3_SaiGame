@@ -7,12 +7,12 @@ public class DamageReceiver : SaiMonoBehaviour
 {
     [Header("Damage Receiver")]
     [SerializeField] protected SphereCollider sphereCollider;
-    [SerializeField] protected double hp = 1;
-    [SerializeField] protected double hpMax = 2;
+    [SerializeField] protected int hp = 1;
+    [SerializeField] protected int hpMax = 2;
     [SerializeField] protected bool isDead = false;
 
-    public double HP => hp;
-    public double HPMax => hpMax;
+    public int HP => hp;
+    public int HPMax => hpMax;
 
     protected override void OnEnable()
     {
@@ -53,7 +53,7 @@ public class DamageReceiver : SaiMonoBehaviour
         if (this.hp > this.hpMax) this.hp = this.hpMax;
     }
 
-    public virtual void Deduct(double deduct)
+    public virtual void Deduct(int deduct)
     {
         if (this.isDead) return;
 
@@ -74,7 +74,7 @@ public class DamageReceiver : SaiMonoBehaviour
         this.OnDead();
     }
 
-    public virtual void SetHPMax(double hpMax)
+    public virtual void SetHPMax(int hpMax)
     {
         this.hpMax = hpMax;
     }
