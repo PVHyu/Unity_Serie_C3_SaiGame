@@ -46,9 +46,9 @@ public class JunkDamReceiver : DamageReceiver
     //     return FXSpawner.smoke1;
     // }
 
-    // public override void Reborn()
-    // {
-    //     this.hpMax = this.junkCtrl.ShootableObject.hpMax;
-    //     base.Reborn();
-    // }
+    public override void Reborn()
+    {
+        this.hpMax = this.junkCtrl.ShootableObject.hpMax;
+        base.Reborn();
+    }
 }

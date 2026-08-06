@@ -145,12 +145,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57128160}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00511992, y: -0.065170005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1894670752}
+  m_Father: {fileID: 1110577996}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &57128162
 MonoBehaviour:
@@ -165,10 +165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JunkDamReceiver
   sphereCollider: {fileID: 57128163}
-  hp: 2
-  hpMax: 4
+  hp: 1
+  hpMax: 2
   isDead: 0
-  junkCtrl: {fileID: 1894670753}
+  junkCtrl: {fileID: 0}
 --- !u!135 &57128163
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -701,6 +701,77 @@ MonoBehaviour:
   isShooting: 0
   shootDelay: 0.2
   shootTimer: 0
+--- !u!1 &602294368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 602294369}
+  - component: {fileID: 602294371}
+  - component: {fileID: 602294370}
+  m_Layer: 0
+  m_Name: DamageReceiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &602294369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602294368}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.84, y: 0.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1894670752}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &602294370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602294368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6867e6dbc66b0434096525b0d694468f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JunkDamReceiver
+  sphereCollider: {fileID: 602294371}
+  hp: 3
+  hpMax: 3
+  isDead: 0
+  junkCtrl: {fileID: 1894670753}
+--- !u!135 &602294371
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602294368}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: -0.0095255375, y: -0.014551818, z: 0}
 --- !u!1 &616565122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1257,8 @@ Transform:
   m_LocalPosition: {x: -1.93485, y: 0.02665, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 57128161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115888455
@@ -1758,7 +1830,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JunkCtrl
   model: {fileID: 1470905641}
-  junkDespawn: {fileID: 0}
+  junkDespawn: {fileID: 616565124}
+  shootableObject: {fileID: 11400000, guid: 4c4885ebedb0a67449f90d1d131119b3, type: 2}
 --- !u!1 &1783394694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,7 +1917,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.25323558
+  m_Radius: 0.2
   m_Center: {x: -0.0095255375, y: -0.014551818, z: 0}
 --- !u!114 &1784471091
 MonoBehaviour:
@@ -2074,7 +2147,7 @@ Transform:
   - {fileID: 624851033}
   - {fileID: 61077446}
   - {fileID: 1563778471}
-  - {fileID: 57128161}
+  - {fileID: 602294369}
   m_Father: {fileID: 1783394695}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1894670753
@@ -2090,7 +2163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JunkCtrl
   model: {fileID: 1827651097}
-  junkDespawn: {fileID: 0}
+  junkDespawn: {fileID: 624851034}
+  shootableObject: {fileID: 11400000, guid: 61f69be881036cf46b3465a963248f8b, type: 2}
 --- !u!1 &1953717154
 GameObject:
   m_ObjectHideFlags: 0
