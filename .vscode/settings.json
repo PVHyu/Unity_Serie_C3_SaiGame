@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Unity_Serie_C3_SaiGame.slnx"
+    "dotnet.defaultSolution": "SaiGame_C3.slnx"
 }
