@@ -48,7 +48,9 @@ public class JunkDamReceiver : DamageReceiver
 
     public override void Reborn()
     {
-        this.hpMax = this.junkCtrl.ShootableObject.hpMax;
+        if (this.junkCtrl == null) return;
+        if (this.junkCtrl.ShootableObject != null) this.hpMax = this.junkCtrl.ShootableObject.hpMax;
+    
         base.Reborn();
     }
 }
