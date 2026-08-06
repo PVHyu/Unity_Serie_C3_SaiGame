@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
-public class DamageReceiver : SaiMonoBehaviour
+public abstract class DamageReceiver : SaiMonoBehaviour
 {
     [Header("Damage Receiver")]
     [SerializeField] protected SphereCollider sphereCollider;
@@ -79,8 +79,5 @@ public class DamageReceiver : SaiMonoBehaviour
         this.hpMax = hpMax;
     }
 
-    protected virtual void OnDead()
-    {
-        // Override this method in derived classes to define dead behavior
-    }
+    protected abstract void OnDead();
 }

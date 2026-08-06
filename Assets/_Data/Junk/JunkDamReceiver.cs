@@ -22,7 +22,7 @@ public class JunkDamReceiver : DamageReceiver
 
     protected override void OnDead()
     {
-        // this.OnDeadFX();
+        this.OnDeadFX();
         // this.OnDeadDrop();
         this.junkCtrl.JunkDespawn.DespawnObject();
     }
@@ -34,17 +34,17 @@ public class JunkDamReceiver : DamageReceiver
     //     ItemDropSpawner.Instance.Drop(this.junkCtrl.ShootableObject.dropList, dropPos, dropRot);
     // }
 
-    // protected virtual void OnDeadFX()
-    // {
-    //     string fxName = this.GetOnDeadFXName();
-    //     Transform fxOnDead = FXSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
-    //     fxOnDead.gameObject.SetActive(true);
-    // }
+    protected virtual void OnDeadFX()
+    {
+        string fxName = this.GetOnDeadFXName();
+        Transform fxOnDead = FXSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
+        fxOnDead.gameObject.SetActive(true);
+    }
 
-    // protected virtual string GetOnDeadFXName()
-    // {
-    //     return FXSpawner.smoke1;
-    // }
+    protected virtual string GetOnDeadFXName()
+    {
+        return FXSpawner.smoke;
+    }
 
     public override void Reborn()
     {
