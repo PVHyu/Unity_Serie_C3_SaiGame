@@ -28,6 +28,7 @@ public abstract class Spawner : SaiMonoBehaviour
 
     protected virtual void LoadPrefabs()
     {
+        if(this.prefabs == null) this.prefabs = new();
         if(this.prefabs.Count > 0) return;
 
         Transform prefabObj = transform.Find("Prefabs");
