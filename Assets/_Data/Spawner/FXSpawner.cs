@@ -6,6 +6,7 @@ public class FXSpawner : Spawner
     public static FXSpawner Instance => instance;
 
     public static string smoke = "Smoke_1";
+    public static string impact = "Impact_1";
 
     protected override void Awake()
     {

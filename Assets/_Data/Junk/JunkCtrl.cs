@@ -5,10 +5,10 @@ using UnityEngine;
 public class JunkCtrl : SaiMonoBehaviour
 {
     [SerializeField] protected Transform model;
-    public Transform Model { get => model; }
+    public Transform Model => model; 
 
     [SerializeField] protected JunkDespawn junkDespawn;
-    public JunkDespawn JunkDespawn { get => junkDespawn; }
+    public JunkDespawn JunkDespawn => junkDespawn; 
 
     [SerializeField] protected JunkSO shootableObject;
     public JunkSO ShootableObject => shootableObject;
