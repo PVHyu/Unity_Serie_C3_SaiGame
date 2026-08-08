@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JunkSO
   junkName: Junk
   hpMax: 2
+  dropList:
+  - itemSO: {fileID: 11400000, guid: 66c1948ae4851d44c980df095f63aa1b, type: 2}
+    dropRate: 70000
+    minDrop: 0
+    maxDrop: 0

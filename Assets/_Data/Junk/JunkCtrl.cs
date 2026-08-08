@@ -11,7 +11,7 @@ public class JunkCtrl : SaiMonoBehaviour
     public JunkDespawn JunkDespawn => junkDespawn; 
 
     [SerializeField] protected JunkSO shootableObject;
-    public JunkSO ShootableObject => shootableObject;
+    public JunkSO ShootableObject => shootableObject;  
 
     protected override void LoadComponents()
     {
