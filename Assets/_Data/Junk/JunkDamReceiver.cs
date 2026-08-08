@@ -23,17 +23,17 @@ public class JunkDamReceiver : DamageReceiver
     protected override void OnDead()
     {
         this.OnDeadFX();
-        // this.OnDeadDrop();
         this.junkCtrl.JunkDespawn.DespawnObject();
-        DropManager.Instance.Drop(this.junkCtrl.ShootableObject.dropList);
+        this.OnDeadDrop();
+        // ItemDropSpawner.Instance.Drop(this.junkCtrl.ShootableObject.dropList);
     }
 
-    // protected virtual void OnDeadDrop()
-    // {
-    //     Vector3 dropPos = transform.position;
-    //     Quaternion dropRot = transform.rotation;
-    //     ItemDropSpawner.Instance.Drop(this.junkCtrl.ShootableObject.dropList, dropPos, dropRot);
-    // }
+    protected virtual void OnDeadDrop()
+    {
+        Vector3 dropPos = transform.position;
+        Quaternion dropRot = transform.rotation;
+        ItemDropSpawner.Instance.Drop(this.junkCtrl.ShootableObject.dropList, dropPos, dropRot);
+    }
 
     protected virtual void OnDeadFX()
     {
