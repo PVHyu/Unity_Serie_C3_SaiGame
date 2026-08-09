@@ -10,7 +10,7 @@ public class Inventory : SaiMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        this.AddItem(ItemCode.IronOre, 10);
+        // this.AddItem(ItemCode.IronOre, 10);
     }
 
     public virtual bool AddItem(ItemCode itemCode, int addcount)

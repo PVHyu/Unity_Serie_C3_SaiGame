@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JunkDespawn : DespawnByDistance
+public class ItemDespawn : DespawnByDistance
 {
     public override void DespawnObject()
     {
-        Debug.LogWarning("Item despawned");
-        JunkSpawner.Instance.Despawn(transform.parent);
+        ItemDropSpawner.Instance.Despawn(transform.parent);
     }
 
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.disLimit = 25f;
+        this.disLimit = 70f;
     }
 }
