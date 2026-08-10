@@ -15,6 +15,6 @@ public class ShipCtrl : SaiMonoBehaviour
     {
         if (this.inventory != null) return;
         this.inventory = transform.Find("Inventory").GetComponent<Inventory>();
-        Debug.LogWarning(transform.name + " LoadInventory", gameObject);
+        // Debug.LogWarning(transform.name + " LoadInventory", gameObject);
     }
 }

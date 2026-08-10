@@ -23,7 +23,7 @@ public class ItemLooter : SaiMonoBehaviour
         if (this.inventory != null) return;
         this.inventory = transform.GetComponentInParent<Inventory>();
         
-        Debug.LogWarning(transform.name + " LoadInventory", gameObject);
+        // Debug.LogWarning(transform.name + " LoadInventory", gameObject);
     }
 
     protected virtual void LoadTrigger()
