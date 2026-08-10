@@ -348,12 +348,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 165607413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d38c4f5f2cfd1f14da5099bab7c6b796, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a908f8bfda8c96499f895dba41478ad, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JunkCtrl
-  model: {fileID: 136214009}
-  junkDespawn: {fileID: 1969151590}
-  shootableObject: {fileID: 11400000, guid: 61f69be881036cf46b3465a963248f8b, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::ItemCtrl
+  itemDespawn: {fileID: 0}
 --- !u!1 &256652411
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124de0d86d92aa343ba89c7e1db246ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickupable
+  itemCtrl: {fileID: 844590549}
   _collider: {fileID: 514271701}
 --- !u!135 &514271701
 SphereCollider:
@@ -783,7 +782,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1458,12 +1457,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 844590547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d38c4f5f2cfd1f14da5099bab7c6b796, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a908f8bfda8c96499f895dba41478ad, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JunkCtrl
-  model: {fileID: 1235050670}
-  junkDespawn: {fileID: 1244871283}
-  shootableObject: {fileID: 11400000, guid: 4c4885ebedb0a67449f90d1d131119b3, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::ItemCtrl
+  itemDespawn: {fileID: 0}
 --- !u!1 &849370555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,10 +2032,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1244871281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f39f765b7179c64aa2939852ff2cce0, type: 3}
+  m_Script: {fileID: 11500000, guid: e4953fa7b44c37641aa07f831f61fa84, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JunkDespawn
-  disLimit: 25
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDespawn
+  disLimit: 70
   distance: 0
   mainCam: {fileID: 519420032}
 --- !u!1 &1258632098
@@ -3052,6 +3049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124de0d86d92aa343ba89c7e1db246ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickupable
+  itemCtrl: {fileID: 165607415}
   _collider: {fileID: 1950741992}
 --- !u!135 &1950741992
 SphereCollider:
@@ -3210,10 +3208,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1969151588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f39f765b7179c64aa2939852ff2cce0, type: 3}
+  m_Script: {fileID: 11500000, guid: e4953fa7b44c37641aa07f831f61fa84, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JunkDespawn
-  disLimit: 25
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDespawn
+  disLimit: 70
   distance: 0
   mainCam: {fileID: 519420032}
 --- !u!1 &2011252327
