@@ -10,41 +10,118 @@ public class Inventory : SaiMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        // this.AddItem(ItemCode.IronOre, 10);
+        this.AddItem(ItemCode.IronOre, 6);
     }
 
-    public virtual bool AddItem(ItemCode itemCode, int addcount)
+    public virtual bool AddItem(ItemCode itemCode, int addCount)
     {
-        ItemInventory itemInventory = this.GetItemByCode(itemCode);
-        int newCount = itemInventory.itemCount + addcount;
+        ItemProfileSO itemProfile = this.GetItemProfile(itemCode);
+        
+        int addRemain = addCount;
+        int newCount;
+        int itemMaxStack;
+        int addMore;
+        ItemInventory itemExist;
+        for(int i = 0; i < this.maxSlot; i++)
+        {
+            itemExist = this.GetItemNotFullStack(itemCode);
+            if(itemExist == null)
+            {
+                if(this.IsInventoryFull()) return false;
+                itemExist = this.CreateEmptyItem(itemProfile);
 
-        if(newCount > itemInventory.maxStack) return false;
+                this.items.Add(itemExist);
+            }
 
-        itemInventory.itemCount = newCount;
-        return true;
+            newCount = itemExist.itemCount + addRemain;
+
+            itemMaxStack = this.GetMaxStack(itemExist);
+            if(newCount > itemMaxStack)
+            {
+                addMore = itemMaxStack - itemExist.itemCount;
+                itemExist.itemCount += addMore;
+                addRemain -= addMore;
+            }
+            else
+            {
+                addRemain -= newCount;
+            }
+
+            itemExist.itemCount = newCount;
+            if(addRemain < 1) break;
+        }
+        return true; 
+    }
+    
+    protected virtual bool IsInventoryFull()
+    {
+        return this.items.Count >= this.maxSlot;
     }
 
-    public virtual ItemInventory GetItemByCode(ItemCode itemCode)
+    protected virtual int GetMaxStack(ItemInventory itemInventory)
     {
-        ItemInventory itemInventory = this.items.Find(item => item.itemProfile.itemCode == itemCode);
-        if(itemInventory == null) itemInventory = this.AddEmptyProfile(itemCode);
-        return itemInventory;
-    }    
+        if(itemInventory == null) return 0;
+        return itemInventory.maxStack;
+    }
 
-    protected virtual ItemInventory AddEmptyProfile(ItemCode itemCode)
+    protected virtual ItemProfileSO GetItemProfile(ItemCode itemCode)
     {
         var profiles = Resources.LoadAll("ItemProfiles", typeof(ItemProfileSO));
         foreach(ItemProfileSO profile in profiles)
         {
-            if(profile.itemCode == itemCode)
-            {
-                ItemInventory itemInventory = new ItemInventory();
-                itemInventory.itemProfile = profile;
-                itemInventory.maxStack = profile.defaultMaxStack;
-                this.items.Add(itemInventory);
-                return itemInventory;
-            }
+            if(profile.itemCode == itemCode) return profile;
+        }
+        return null;
+    }   
+
+    protected virtual ItemInventory GetItemNotFullStack(ItemCode itemCode)
+    {
+        foreach(ItemInventory item in this.items)
+        {
+            if(itemCode != item.itemProfile.itemCode) continue;
+            if(this.IsFullStack(item)) continue;
+            return item;
         }
         return null;
     }
+
+    protected virtual bool IsFullStack(ItemInventory itemInventory)
+    {
+        if(itemInventory == null) return true;
+        int maxStack = this.GetMaxStack(itemInventory);
+        return itemInventory.itemCount >= maxStack;
+    }
+
+    protected virtual ItemInventory CreateEmptyItem(ItemProfileSO itemProfile)
+    {
+        ItemInventory itemInventory = new ItemInventory();
+        itemInventory.itemProfile = itemProfile;
+        itemInventory.maxStack = itemProfile.defaultMaxStack;
+
+        return itemInventory;
+    }
+
+    // public virtual ItemInventory GetItemByCode(ItemCode itemCode)
+    // {
+    //     ItemInventory itemInventory = this.items.Find(item => item.itemProfile.itemCode == itemCode);
+    //     if(itemInventory == null) itemInventory = this.AddEmptyProfile(itemCode);
+    //     return itemInventory;
+    // }    
+
+    // protected virtual ItemInventory AddEmptyProfile(ItemCode itemCode)
+    // {
+    //     var profiles = Resources.LoadAll("ItemProfiles", typeof(ItemProfileSO));
+    //     foreach(ItemProfileSO profile in profiles)
+    //     {
+    //         if(profile.itemCode == itemCode)
+    //         {
+    //             ItemInventory itemInventory = new ItemInventory();
+    //             itemInventory.itemProfile = profile;
+    //             itemInventory.maxStack = profile.defaultMaxStack;
+    //             this.items.Add(itemInventory);
+    //             return itemInventory;
+    //         }
+    //     }
+    //     return null;
+    // }
 }

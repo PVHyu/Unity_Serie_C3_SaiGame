@@ -1287,7 +1287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3004dd5bb594d494182658de694d4c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  maxSlot: 70
+  maxSlot: 1
   items: []
 --- !u!1 &753376970
 GameObject:
