@@ -23,11 +23,11 @@ public class ItemPickupable : SaiMonoBehaviour
         }
     }
 
-    // public virtual void OnMouseDown()
-    // {
-    //     //Debug.Log(transform.parent.name);
-    //     //PlayerCtrl.Instance.PlayerPickup.ItemPickup(this);
-    // }
+    public virtual void OnMouseDown()
+    {
+        Debug.Log(transform.parent.name);
+        PlayerCtrl.Instance.PlayerPickup.ItemPickup(this);
+    }
 
     protected override void LoadComponents()
     {
@@ -41,7 +41,7 @@ public class ItemPickupable : SaiMonoBehaviour
         if (this._collider != null) return;
         this._collider = transform.GetComponent<SphereCollider>();
         this._collider.isTrigger = true;
-        this._collider.radius = 0.1f;
+        this._collider.radius = 0.3f;
         Debug.LogWarning(transform.name + " LoadTrigger", gameObject);
     }
 
@@ -52,7 +52,6 @@ public class ItemPickupable : SaiMonoBehaviour
 
     public virtual void Picked()
     {
-        Debug.LogWarning("Da nhat item");
         this.junkCtrl.JunkDespawn.DespawnObject();
     }
 }
