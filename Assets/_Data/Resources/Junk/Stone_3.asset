@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ba20cd8ec611f14baa851da25261f65, type: 3}
-  m_Name: Stone_2
+  m_Name: Stone_3
   m_EditorClassIdentifier: Assembly-CSharp::JunkSO
-  junkName: Stone_2
+  junkName: Stone_3
   hpMax: 3
   dropList:
-  - itemSO: {fileID: 11400000, guid: baa30601dcf33d0468ab5b51f0896280, type: 2}
+  - itemSO: {fileID: 11400000, guid: b2db8a543f83dca4db26052a1beed46f, type: 2}
     dropRate: 70000
     minDrop: 0
     maxDrop: 0

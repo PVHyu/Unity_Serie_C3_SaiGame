@@ -4,11 +4,10 @@ using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(Rigidbody))]
-public class ItemLooter : SaiMonoBehaviour
+public class ItemLooter : InventoryAbstract
 {
     [SerializeField] protected SphereCollider _collider;
     [SerializeField] protected Rigidbody _rigidbody;
-    protected Inventory inventory;
 
     protected override void LoadComponents()
     {
@@ -16,14 +15,6 @@ public class ItemLooter : SaiMonoBehaviour
         this.LoadTrigger();
         this.LoadRigidbody();
         this.LoadInventory();
-    }
-
-    protected virtual void LoadInventory()
-    {
-        if (this.inventory != null) return;
-        this.inventory = transform.GetComponentInParent<Inventory>();
-        
-        // Debug.LogWarning(transform.name + " LoadInventory", gameObject);
     }
 
     protected virtual void LoadTrigger()

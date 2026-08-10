@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba20cd8ec611f14baa851da25261f65, type: 3}
   m_Name: Stone_1
   m_EditorClassIdentifier: Assembly-CSharp::JunkSO
-  junkName: Junk
+  junkName: Stone_1
   hpMax: 2
   dropList:
   - itemSO: {fileID: 11400000, guid: 711b9902a816c64409353deb507cd95e, type: 2}
