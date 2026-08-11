@@ -13,7 +13,7 @@ public class ItemCtrl : SaiMonoBehaviour
     {
         base.LoadComponents();
         this.LoadItemDespawn();
-        // this.LoadItemInventory();
+        this.LoadItemInventory();
     }
 
 // //     protected override void OnEnable()
@@ -39,19 +39,19 @@ public class ItemCtrl : SaiMonoBehaviour
         //this.itemInventory.upgradeLevel = itemInventory.upgradeLevel;
     }
 
-//     protected virtual void LoadItemInventory()
-//     {
-//         if (this.itemInventory.itemProfile != null) return;
-//         ItemCode itemCode = ItemCodeParser.FromString(transform.name);
-//         ItemProfileSO itemProfile = ItemProfileSO.FindByItemCode(itemCode);
-//         this.itemInventory.itemProfile = itemProfile;
-//         this.ResetItem();
-//         Debug.Log(transform.name + ": LoadItemInventory", gameObject);
-//     }
+    protected virtual void LoadItemInventory()
+    {
+        if (this.itemInventory.itemProfile != null) return;
+        ItemCode itemCode = ItemCodeParser.FromString(transform.name);
+        ItemProfileSO itemProfile = ItemProfileSO.FindByItemCode(itemCode);
+        this.itemInventory.itemProfile = itemProfile;
+        this.ResetItem();
+        Debug.Log(transform.name + ": LoadItemInventory", gameObject);
+    }
 
-//     protected virtual void ResetItem()
-//     {
-//         this.itemInventory.itemCount = 1;
-//         this.itemInventory.upgradeLevel = 0;
-//     }
+    protected virtual void ResetItem()
+    {
+        this.itemInventory.itemCount = 1;
+        this.itemInventory.upgradeLevel = 0;
+    }
 }
