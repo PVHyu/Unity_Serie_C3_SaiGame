@@ -28,10 +28,13 @@ public class Inventory : SaiMonoBehaviour
         return this.AddItem(itemCode, addCount);
     }
 
-    public virtual bool AddEquipment(ItemInventory itemInventory)
+    public virtual bool AddEquipment(ItemInventory itemPicked)
     {
         if(this.IsInventoryFull()) return false;
-        this.items.Add(itemInventory);
+
+        ItemInventory item = itemPicked.Clone();
+
+        this.items.Add(itemPicked);
         return true;
     }
 

@@ -16,11 +16,11 @@ public class ItemCtrl : SaiMonoBehaviour
         this.LoadItemInventory();
     }
 
-// //     protected override void OnEnable()
-// //     {
-// //         base.OnEnable();
-// //         this.ResetItem();
-// //     }
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        this.ResetItem();
+    }
 
     protected virtual void LoadItemDespawn()
     {
@@ -31,12 +31,7 @@ public class ItemCtrl : SaiMonoBehaviour
 
     public virtual void SetItemInventory(ItemInventory itemInventory)
     {
-        this.itemInventory = itemInventory;
-
-        //this.itemInventory = new ItemInventory();
-        //this.itemInventory.itemProfile = itemInventory.itemProfile;
-        //this.itemInventory.itemCount = itemInventory.itemCount;
-        //this.itemInventory.upgradeLevel = itemInventory.upgradeLevel;
+        this.itemInventory = itemInventory.Clone();
     }
 
     protected virtual void LoadItemInventory()
