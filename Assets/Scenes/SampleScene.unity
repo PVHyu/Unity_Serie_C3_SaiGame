@@ -490,6 +490,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemCtrl
   itemDespawn: {fileID: 1969151590}
+  itemInventory:
+    itemProfile: {fileID: 11400000, guid: baa30601dcf33d0468ab5b51f0896280, type: 2}
+    itemCount: 0
+    maxStack: 7
+    upgradeLevel: 0
 --- !u!1 &170416359
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +953,7 @@ GameObject:
   - component: {fileID: 474825467}
   - component: {fileID: 474825468}
   m_Layer: 0
-  m_Name: ItemDrop
+  m_Name: InventoryDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1771,6 +1776,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemCtrl
   itemDespawn: {fileID: 1244871283}
+  itemInventory:
+    itemProfile: {fileID: 11400000, guid: 711b9902a816c64409353deb507cd95e, type: 2}
+    itemCount: 0
+    maxStack: 7
+    upgradeLevel: 0
 --- !u!1 &849370555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3333,6 +3343,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemCtrl
   itemDespawn: {fileID: 1297599417}
+  itemInventory:
+    itemProfile: {fileID: 11400000, guid: b2db8a543f83dca4db26052a1beed46f, type: 2}
+    itemCount: 0
+    maxStack: 7
+    upgradeLevel: 0
 --- !u!1 &1783394694
 GameObject:
   m_ObjectHideFlags: 0

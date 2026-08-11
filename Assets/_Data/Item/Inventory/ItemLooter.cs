@@ -15,7 +15,7 @@ public class ItemLooter : InventoryAbstract
         this.LoadTrigger();
         this.LoadRigidbody();
         this.LoadInventory();
-    }
+    }   
 
     protected virtual void LoadTrigger()
     {
@@ -43,7 +43,9 @@ public class ItemLooter : InventoryAbstract
         ItemPickupable itemPickupable = collider.GetComponent<ItemPickupable>();
 
         ItemCode itemCode = itemPickupable.GetItemCode();
-        if (this.inventory.AddItem(itemCode, 1))
+        ItemInventory itemInventory = itemPickupable.ItemCtrl.ItemInventory; 
+
+        if (this.inventory.AddItem(itemInventory))
         {
             itemPickupable.Picked();
         }

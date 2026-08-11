@@ -6,8 +6,8 @@ public class ItemCtrl : SaiMonoBehaviour
     [SerializeField] protected ItemDespawn itemDespawn;
     public ItemDespawn ItemDespawn => itemDespawn;
 
-//     [SerializeField] protected ItemInventory itemInventory;
-//     public ItemInventory ItemInventory => itemInventory;
+    [SerializeField] protected ItemInventory itemInventory;
+    public ItemInventory ItemInventory => itemInventory;
 
     protected override void LoadComponents()
     {
@@ -29,15 +29,15 @@ public class ItemCtrl : SaiMonoBehaviour
         Debug.Log(transform.name + ": LoadItemDespawn", gameObject);
     }
 
-// //     public virtual void SetItemInventory(ItemInventory itemInventory)
-// //     {
-// //         this.itemInventory = itemInventory.Clone();
+    public virtual void SetItemInventory(ItemInventory itemInventory)
+    {
+        this.itemInventory = itemInventory;
 
-// //         //this.itemInventory = new ItemInventory();
-// //         //this.itemInventory.itemProfile = itemInventory.itemProfile;
-// //         //this.itemInventory.itemCount = itemInventory.itemCount;
-// //         //this.itemInventory.upgradeLevel = itemInventory.upgradeLevel;
-// //     }
+        //this.itemInventory = new ItemInventory();
+        //this.itemInventory.itemProfile = itemInventory.itemProfile;
+        //this.itemInventory.itemCount = itemInventory.itemCount;
+        //this.itemInventory.upgradeLevel = itemInventory.upgradeLevel;
+    }
 
 //     protected virtual void LoadItemInventory()
 //     {
