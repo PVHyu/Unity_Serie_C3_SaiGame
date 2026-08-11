@@ -12,8 +12,8 @@ public class Inventory : SaiMonoBehaviour
     {
         base.Start();
         this.AddItem(ItemCode.CopperSword, 1);
-        this.AddItem(ItemCode.IronOre, 3);
-        this.AddItem(ItemCode.GoldOre, 3);
+        this.AddItem(ItemCode.IronOre, 6);
+        this.AddItem(ItemCode.GoldOre, 6);
     }
 
     public virtual bool AddItem(ItemCode itemCode, int addCount)
@@ -81,7 +81,6 @@ public class Inventory : SaiMonoBehaviour
             if (itemInventory.itemProfile.itemCode != itemCode) continue;
             totalCount += itemInventory.itemCount;
         }
-
         return totalCount;
     }
 
@@ -96,7 +95,7 @@ public class Inventory : SaiMonoBehaviour
             itemInventory = this.items[i];
             if (itemInventory.itemProfile.itemCode != itemCode) continue;
 
-            if (deductCount > itemInventory.itemCount)
+            if (deductCount > itemInventory.itemCount)  
             {
                 deduct = itemInventory.itemCount;
                 deductCount -= itemInventory.itemCount;
@@ -109,7 +108,6 @@ public class Inventory : SaiMonoBehaviour
 
             itemInventory.itemCount -= deduct;
         }
-
         this.ClearEmptySlot();
     }
 

@@ -9,8 +9,8 @@ public class ItemUpgrade : InventoryAbstract
     protected override void Start()
     {
         base.Start();
-        //Invoke(nameof(this.Test), 1);
-        //Invoke(nameof(this.Test), 2);
+        Invoke(nameof(this.Test), 1);
+        Invoke(nameof(this.Test), 2);
         Invoke(nameof(this.Test), 3);
     }
 
@@ -21,14 +21,13 @@ public class ItemUpgrade : InventoryAbstract
 
     public virtual bool UpgradeItem(int itemIndex)
     {
-        Debug.Log($"UpgradeItem: {itemIndex}");
         if (itemIndex >= this.inventory.Items.Count) return false;  
 
         ItemInventory itemInventory = this.inventory.Items[itemIndex];
         if (itemInventory.itemCount < 1) return false;
 
         List<ItemRecipe> upgradeLevels = itemInventory.itemProfile.upgradeLevels;
-        if (!this.ItemUpgradeable(upgradeLevels)) return false;
+        if (!this.ItemUpgradeable(upgradeLevels)) return false;  // Đây là 
         if (!this.HaveEnoughIngredients(upgradeLevels, itemInventory.upgradeLevel)) return false;
 
         this.DeductIngredients(upgradeLevels, itemInventory.upgradeLevel);

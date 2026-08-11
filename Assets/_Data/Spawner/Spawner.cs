@@ -105,6 +105,7 @@ public abstract class Spawner : SaiMonoBehaviour
     {
         foreach (Transform prefab in this.prefabs)
         {
+            Debug.Log(prefab.ToString());
             if (prefab.name == prefabName) return prefab;
         }
 
