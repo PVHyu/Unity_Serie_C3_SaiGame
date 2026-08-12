@@ -3075,7 +3075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JunkCtrl
   model: {fileID: 183931869}
   junkDespawn: {fileID: 962474069}
-  shootableObject: {fileID: 11400000, guid: 78d359569c8daaf4f966f4d1dd67616d, type: 2}
+  shootableObject: {fileID: 11400000, guid: ee6516ecbbd487242bdfb38a1b9b21a2, type: 2}
 --- !u!1 &1297599416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,7 +3580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JunkCtrl
   model: {fileID: 1470905641}
   junkDespawn: {fileID: 616565124}
-  shootableObject: {fileID: 11400000, guid: 4c4885ebedb0a67449f90d1d131119b3, type: 2}
+  shootableObject: {fileID: 11400000, guid: 58579ae2d0b6d7c4488e106a3a2612df, type: 2}
 --- !u!1 &1613614653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4077,7 +4077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JunkCtrl
   model: {fileID: 1827651097}
   junkDespawn: {fileID: 624851034}
-  shootableObject: {fileID: 11400000, guid: 61f69be881036cf46b3465a963248f8b, type: 2}
+  shootableObject: {fileID: 11400000, guid: 9d65cb95a274de0488cb728e0f4f9c8c, type: 2}
 --- !u!1 &1950741989
 GameObject:
   m_ObjectHideFlags: 0
