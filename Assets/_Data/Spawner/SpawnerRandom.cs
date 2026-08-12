@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JunkSpawnerRandom : SaiMonoBehaviour
+[RequireComponent(typeof(SpawnerCtrl))]
+public class SpawnerRandom : SaiMonoBehaviour
 {
-    [Header("Junk Random")]
-    [SerializeField] protected JunkSpawnerCtrl junkSpawnerCtrl;
+    [Header("Spawner Random")]
+    [SerializeField] protected SpawnerCtrl spawnerCtrl;
     [SerializeField] protected float randomDelay = 1f;
     [SerializeField] protected float randomTimer = 0f;
     [SerializeField] protected float randomLimit = 9f;
@@ -18,9 +19,9 @@ public class JunkSpawnerRandom : SaiMonoBehaviour
 
     protected virtual void LoadJunkCtrl()
     {
-        if (this.junkSpawnerCtrl != null) return;
-        this.junkSpawnerCtrl = GetComponent<JunkSpawnerCtrl>();
-        Debug.LogWarning(transform.name + ": LoadJunkCtrl", gameObject);
+        if (this.spawnerCtrl != null) return;
+        this.spawnerCtrl = GetComponent<SpawnerCtrl>();
+        Debug.LogWarning(transform.name + ": LoadSpawnerCtrl", gameObject);
     }
 
     protected virtual void FixedUpdate()
@@ -36,18 +37,18 @@ public class JunkSpawnerRandom : SaiMonoBehaviour
         if (this.randomTimer < this.randomDelay) return;
         this.randomTimer = 0;
 
-        Transform ranPoint = this.junkSpawnerCtrl.SpawnPoints.GetRandom(); 
+        Transform ranPoint = this.spawnerCtrl.SpawnPoints.GetRandom(); 
         Vector3 pos = ranPoint.position;
         Quaternion rot = transform.rotation;
 
-        Transform prefab = this.junkSpawnerCtrl.JunkSpawner.RandomPrefab(); 
-        Transform obj = this.junkSpawnerCtrl.JunkSpawner.Spawn(prefab, pos, rot);
+        Transform prefab = this.spawnerCtrl.Spawner.RandomPrefab(); 
+        Transform obj = this.spawnerCtrl.Spawner.Spawn(prefab, pos, rot);
         obj.gameObject.SetActive(true);
     }
 
     protected virtual bool RandomReachLimit()
     {
-        int currentJunk = this.junkSpawnerCtrl.JunkSpawner.SpawnedCount;
+        int currentJunk = this.spawnerCtrl.Spawner.SpawnedCount;
         return currentJunk >= this.randomLimit;
     }
 }

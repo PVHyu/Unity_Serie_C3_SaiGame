@@ -875,6 +875,55 @@ Transform:
   - {fileID: 135251344}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &323082145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323082146}
+  - component: {fileID: 323082147}
+  m_Layer: 0
+  m_Name: ShipMovement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323082146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323082145}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 620643206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &323082147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323082145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1e1ac25d2f410459effd51660e7f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShipFollowTarget
+  targetPosition: {x: 0, y: 0, z: 0}
+  speed: 0.01
+  minDistance: 1
+  distance: 1
+  target: {fileID: 1953717155}
 --- !u!1 &335021016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,7 +1686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &620643205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1651,7 +1700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCtrl
   model: {fileID: 1276970683}
-  despawn: {fileID: 0}
+  despawn: {fileID: 1297936235}
   shootableObject: {fileID: 11400000, guid: 7730e2d036c7f704b85ab55a54acef1a, type: 2}
 --- !u!4 &620643206
 Transform:
@@ -1662,7 +1711,7 @@ Transform:
   m_GameObject: {fileID: 620643204}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9297299, y: -1.65852, z: 0}
+  m_LocalPosition: {x: 7.1542807, y: -1.86036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1670,7 +1719,8 @@ Transform:
   - {fileID: 1297936232}
   - {fileID: 735393742}
   - {fileID: 2111945111}
-  m_Father: {fileID: 0}
+  - {fileID: 323082146}
+  m_Father: {fileID: 2089638849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &624851032
 GameObject:
@@ -1967,11 +2017,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 806667789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab7b54960b3f7ab4e86a0e0269b2a480, type: 3}
+  m_Script: {fileID: 11500000, guid: 67d7cc7bf921a964fb667404c2a6cd2d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::ShipFollowMouse
   targetPosition: {x: 0, y: 0, z: 0}
-  speed: 0.01
+  speed: 0.02
+  minDistance: 1
+  distance: 1
 --- !u!1 &844590547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,10 +2086,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 849370557}
-  - component: {fileID: 849370558}
   - component: {fileID: 849370559}
+  - component: {fileID: 849370560}
   m_Layer: 0
-  m_Name: JunkSpawnPoints
+  m_Name: SpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2062,23 +2114,6 @@ Transform:
   - {fileID: 1371270779}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &849370558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849370555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c877439634473419be695e6a6406b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JunkSpawnPoints
-  points:
-  - {fileID: 2011252328}
-  - {fileID: 1201440427}
-  - {fileID: 127598952}
-  - {fileID: 1371270779}
 --- !u!114 &849370559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2093,6 +2128,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FollowTarget
   target: {fileID: 1963735229}
   speed: 2
+--- !u!114 &849370560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849370555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96006bf4a63b8ec4f97c8ec3995f6630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPoints
+  points:
+  - {fileID: 2011252328}
+  - {fileID: 1201440427}
+  - {fileID: 127598952}
+  - {fileID: 1371270779}
 --- !u!1 &892637894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,7 +2273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowTarget
   target: {fileID: 1953717155}
-  speed: 0.5
+  speed: 1
 --- !u!4 &913166222
 Transform:
   m_ObjectHideFlags: 0
@@ -2671,6 +2723,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1153312482}
   - component: {fileID: 1153312483}
+  - component: {fileID: 1153312485}
+  - component: {fileID: 1153312484}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -2710,10 +2764,38 @@ MonoBehaviour:
   holder: {fileID: 2102243067}
   spawnedCount: 0
   prefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 620643206}
   poolObjs: []
+--- !u!114 &1153312484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153312481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08c235a86744034cad5341043e94cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerRandom
+  spawnerCtrl: {fileID: 1153312485}
+  randomDelay: 1
+  randomTimer: 0
+  randomLimit: 9
+--- !u!114 &1153312485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153312481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c792d67aee93544a986a85fb3ecaede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerCtrl
+  spawner: {fileID: 1153312483}
+  spawnPoints: {fileID: 849370560}
 --- !u!1 &1183865613
 GameObject:
   m_ObjectHideFlags: 0
@@ -3149,13 +3231,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276970682}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 620643206}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &1276970684
 SpriteRenderer:
   serializedVersion: 3
@@ -4276,7 +4358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JunkSpawnerCtrl
   junkSpawner: {fileID: 1840592038}
-  spawnPoints: {fileID: 849370558}
+  spawnPoints: {fileID: 0}
 --- !u!1 &1891758788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,7 +4757,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 620643206}
   m_Father: {fileID: 1153312482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2102243066
@@ -5570,4 +5653,3 @@ SceneRoots:
   - {fileID: 788222843}
   - {fileID: 58900479}
   - {fileID: 1299716436}
-  - {fileID: 620643206}

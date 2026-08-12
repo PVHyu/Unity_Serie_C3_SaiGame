@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SpawnPoints : SaiMonoBehaviour
+public class SpawnPoints : SaiMonoBehaviour
 {
     [SerializeField] protected List<Transform> points = new();
 
