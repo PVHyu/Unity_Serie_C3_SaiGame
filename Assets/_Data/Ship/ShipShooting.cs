@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 
-public class ShipShooting : MonoBehaviour
+public abstract class ShipShooting : SaiMonoBehaviour
 {
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 0.2f;
@@ -38,9 +38,5 @@ public class ShipShooting : MonoBehaviour
         Debug.Log("Shooting");
     }
 
-    protected virtual bool IsShooting()
-    {
-        this.isShooting = InputManager.Instance.OnFiring == 1;
-        return this.isShooting;
-    }
+    protected abstract bool IsShooting();
 }
