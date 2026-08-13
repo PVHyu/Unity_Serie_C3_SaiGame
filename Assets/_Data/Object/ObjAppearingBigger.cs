@@ -35,7 +35,6 @@ public class ObjAppearingBigger : ObjAppearing
     {
         base.Appear();
         transform.parent.localScale = new Vector3(this.maxScale, this.maxScale, this.maxScale);
-
     } 
     
 }

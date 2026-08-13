@@ -8,9 +8,16 @@ public abstract class ObjAppearing : SaiMonoBehaviour
 
     [SerializeField] protected bool isAppearing = false;
     [SerializeField] protected bool appeared = false;
+    [SerializeField] protected List<IOAppearObserver> observers = new List<IOAppearObserver>(); 
 
     public bool IsAppearing => isAppearing;
-    public bool Appeared => appeared;  
+    public bool Appeared => appeared;
+
+    protected override void Start()
+    {
+        base.Start();
+        this.OnAppearStart();
+    }
 
     protected virtual void FixedUpdate()
     {
@@ -23,7 +30,27 @@ public abstract class ObjAppearing : SaiMonoBehaviour
     {
         this.appeared = true;
         this.isAppearing = false;
+        this.OnAppearFinish();
     }
 
-    
+    public virtual void ObserverAdd(IOAppearObserver observer)
+    {
+        this.observers.Add(observer);
+    }
+
+    protected virtual void OnAppearStart()
+    {
+        foreach(IOAppearObserver observer in this.observers)
+        {
+            observer.OnAppearStart();
+        }
+    }
+
+    protected virtual void OnAppearFinish()
+    {
+        foreach(IOAppearObserver observer in this.observers)
+        {
+            observer.OnAppearFinish();
+        }
+    }
 }
