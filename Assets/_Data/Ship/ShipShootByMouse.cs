@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 
-public class ShipShootByMouse : ShipShooting
+public class ShipShootByMouse : ObjShooting
 {
      protected override bool IsShooting()
     {

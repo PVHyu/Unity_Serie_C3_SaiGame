@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShipMovement : SaiMonoBehaviour
+public class ObjMovement : SaiMonoBehaviour
 {
     [SerializeField] protected Vector3 targetPosition;
     [SerializeField] protected float speed = 0.01f;
