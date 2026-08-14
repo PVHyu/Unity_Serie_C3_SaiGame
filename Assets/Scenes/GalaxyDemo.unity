@@ -1199,7 +1199,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2047853735}
   m_Father: {fileID: 620643206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &323082147
@@ -1211,14 +1212,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 323082145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1e1ac25d2f410459effd51660e7f9f, type: 3}
+  m_Script: {fileID: 11500000, guid: b1b1fa0f7dc5c1a48bdd51f363516e99, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShipFollowTarget
+  m_EditorClassIdentifier: Assembly-CSharp::ObjMoveForward
   targetPosition: {x: 0, y: 0, z: 0}
-  speed: 0.01
+  speed: 0.005
   minDistance: 1
   distance: 1
-  target: {fileID: 1953717155}
+  moveTarget: {fileID: 2047853735}
 --- !u!1 &335021016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,6 +1268,53 @@ MonoBehaviour:
   direction: {x: 1, y: 0, z: 0}
   minCamPos: -9
   maxCamPos: 9
+--- !u!1 &365831806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 365831807}
+  - component: {fileID: 365831808}
+  m_Layer: 0
+  m_Name: ObjLookAtTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &365831807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365831806}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 620643206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &365831808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365831806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ba67f521bbb954cba7cce679dd253f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjLookAtPlayer
+  targetPosition: {x: 0, y: 0, z: 0}
+  rotSpeed: 3
+  player: {fileID: 1953717154}
 --- !u!1 &397466072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,6 +1904,56 @@ MonoBehaviour:
   isShooting: 0
   shootDelay: 0.2
   shootTimer: 0
+--- !u!1 &551516884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 551516885}
+  - component: {fileID: 551516886}
+  m_Layer: 0
+  m_Name: ObjMovement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &551516885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551516884}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1955782426}
+  m_Father: {fileID: 1158580093}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &551516886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551516884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b1fa0f7dc5c1a48bdd51f363516e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjMoveForward
+  targetPosition: {x: 0, y: 0, z: 0}
+  speed: 0.001
+  minDistance: 1
+  distance: 1
+  moveTarget: {fileID: 1955782426}
 --- !u!1 &553605490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,6 +2352,10 @@ MonoBehaviour:
   despawn: {fileID: 1297936235}
   shootableObject: {fileID: 11400000, guid: 7730e2d036c7f704b85ab55a54acef1a, type: 2}
   objShooting: {fileID: 1790412161}
+  objMovement: {fileID: 0}
+  objLookAtTarget: {fileID: 0}
+  spawner: {fileID: 0}
+  damageReceiver: {fileID: 0}
   spawnPoints: {fileID: 749610600}
 --- !u!4 &620643206
 Transform:
@@ -2270,12 +2372,12 @@ Transform:
   m_Children:
   - {fileID: 1276970683}
   - {fileID: 1297936232}
-  - {fileID: 735393742}
   - {fileID: 2111945111}
   - {fileID: 323082146}
   - {fileID: 1790412160}
   - {fileID: 749610602}
   - {fileID: 1597456099}
+  - {fileID: 365831807}
   m_Father: {fileID: 2089638849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &624851032
@@ -2358,6 +2460,10 @@ MonoBehaviour:
   despawn: {fileID: 2031823241}
   shootableObject: {fileID: 11400000, guid: a179cd27ab370a6409b9a282a9733091, type: 2}
   objShooting: {fileID: 0}
+  objMovement: {fileID: 0}
+  objLookAtTarget: {fileID: 0}
+  spawner: {fileID: 0}
+  damageReceiver: {fileID: 0}
   spawnPoints: {fileID: 0}
 --- !u!4 &632164574
 Transform:
@@ -2430,37 +2536,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
   maxSlot: 3
   items: []
---- !u!1 &735393741
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 735393742}
-  m_Layer: 0
-  m_Name: ParentRotate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &735393742
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735393741}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 620643206}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &749610599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,6 +2898,53 @@ MonoBehaviour:
   - {fileID: 1201440427}
   - {fileID: 127598952}
   - {fileID: 1371270779}
+--- !u!1 &854120927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854120928}
+  - component: {fileID: 854120929}
+  m_Layer: 0
+  m_Name: ObjLookAtTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854120928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854120927}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1158580093}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &854120929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854120927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ba67f521bbb954cba7cce679dd253f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjLookAtPlayer
+  targetPosition: {x: 0, y: 0, z: 0}
+  rotSpeed: 3
+  player: {fileID: 1953717154}
 --- !u!1 &892637894
 GameObject:
   m_ObjectHideFlags: 0
@@ -3533,6 +3655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1158580093}
   - component: {fileID: 1158580092}
+  - component: {fileID: 1158580094}
   m_Layer: 0
   m_Name: MotherShip_2
   m_TagString: Untagged
@@ -3555,7 +3678,11 @@ MonoBehaviour:
   model: {fileID: 553605491}
   despawn: {fileID: 1869962407}
   shootableObject: {fileID: 11400000, guid: fc629f696a907bf4bbb63f9cf4293d17, type: 2}
-  objShooting: {fileID: 0}
+  objShooting: {fileID: 558113254}
+  objMovement: {fileID: 551516886}
+  objLookAtTarget: {fileID: 854120929}
+  spawner: {fileID: 0}
+  damageReceiver: {fileID: 55491163}
   spawnPoints: {fileID: 405312316}
 --- !u!4 &1158580093
 Transform:
@@ -3572,14 +3699,29 @@ Transform:
   m_Children:
   - {fileID: 553605491}
   - {fileID: 1869962409}
-  - {fileID: 1773705150}
   - {fileID: 55491162}
-  - {fileID: 2066405496}
   - {fileID: 558113253}
   - {fileID: 405312317}
   - {fileID: 1687278013}
+  - {fileID: 854120928}
+  - {fileID: 551516885}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1158580094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158580091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89eb668c2dec21d48b093ca1a4f2785b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MotherShipModify
+  shootableObjectCtrl: {fileID: 1158580092}
+  speed: 0.001
+  rotSpeed: 3
 --- !u!1 &1183865613
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,37 +5211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Abilities
   abilityObjectCtrl: {fileID: 1158580092}
---- !u!1 &1773705149
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1773705150}
-  m_Layer: 0
-  m_Name: ParentRotate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1773705150
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773705149}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1158580093}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1783394694
 GameObject:
   m_ObjectHideFlags: 0
@@ -5876,7 +5987,7 @@ GameObject:
   - component: {fileID: 1953717156}
   m_Layer: 0
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5914,6 +6025,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54922e050245f954587bdfa8b8a4d128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShipCtrl
+--- !u!1 &1955782425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955782426}
+  m_Layer: 0
+  m_Name: MoveTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1955782426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955782425}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.92973, y: 1.65852, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 551516885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1957149077
 GameObject:
   m_ObjectHideFlags: 0
@@ -6139,6 +6281,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 632164574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2047853734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047853735}
+  m_Layer: 0
+  m_Name: MoveTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2047853735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047853734}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.92973, y: 1.65852, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 323082146}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2060269661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6170,55 +6343,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1840592037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2066405495
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2066405496}
-  - component: {fileID: 2066405497}
-  m_Layer: 0
-  m_Name: ObjMovement
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2066405496
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066405495}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1158580093}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2066405497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066405495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1e1ac25d2f410459effd51660e7f9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShipFollowTarget
-  targetPosition: {x: 0, y: 0, z: 0}
-  speed: 0.005
-  minDistance: 1
-  distance: 1
-  target: {fileID: 1953717155}
 --- !u!1 &2069400736
 GameObject:
   m_ObjectHideFlags: 0
@@ -6264,7 +6388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjLookAtMouse
   targetPosition: {x: 0, y: 0, z: 0}
-  rotSpeed: 3
+  rotSpeed: 5
 --- !u!1 &2089638848
 GameObject:
   m_ObjectHideFlags: 0
