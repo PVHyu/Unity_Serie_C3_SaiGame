@@ -42,5 +42,6 @@ public class ObjAppearWithoutShoot : ShootableObjectAbstract, IOAppearObserver
     public void OnAppearFinish()
     {
         this.shootableObjectCtrl.ObjShooting.gameObject.SetActive(true);
+        this.shootableObjectCtrl.Spawner.Hold(transform.parent);
     }
 }

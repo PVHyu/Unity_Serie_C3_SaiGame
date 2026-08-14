@@ -2062,7 +2062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &558113253
 Transform:
   m_ObjectHideFlags: 0
@@ -2352,10 +2352,10 @@ MonoBehaviour:
   despawn: {fileID: 1297936235}
   shootableObject: {fileID: 11400000, guid: 7730e2d036c7f704b85ab55a54acef1a, type: 2}
   objShooting: {fileID: 1790412161}
-  objMovement: {fileID: 0}
-  objLookAtTarget: {fileID: 0}
-  spawner: {fileID: 0}
-  damageReceiver: {fileID: 0}
+  objMovement: {fileID: 323082147}
+  objLookAtTarget: {fileID: 365831808}
+  spawner: {fileID: 1153312483}
+  damageReceiver: {fileID: 2111945114}
   spawnPoints: {fileID: 749610600}
 --- !u!4 &620643206
 Transform:
@@ -4701,6 +4701,8 @@ MonoBehaviour:
   delay: 2
   isReady: 0
   spawner: {fileID: 1153312483}
+  minions: []
+  minionLimit: 2
 --- !u!1 &1440305755
 GameObject:
   m_ObjectHideFlags: 0

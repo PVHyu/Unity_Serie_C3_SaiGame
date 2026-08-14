@@ -120,6 +120,9 @@ public abstract class Spawner : SaiMonoBehaviour
 
     public virtual void Hold(Transform obj)
     {
-        obj.parent = this.holder;
+        if (obj == null) Debug.LogError("Obj is NULL");
+        if (this.holder == null) Debug.LogError("Holder is NULL");
+
+        obj.SetParent(this.holder);
     }
 }
