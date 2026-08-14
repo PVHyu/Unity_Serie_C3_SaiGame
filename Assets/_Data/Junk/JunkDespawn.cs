@@ -6,7 +6,6 @@ public class JunkDespawn : DespawnByDistance
 {
     public override void DespawnObject()
     {
-        Debug.LogWarning("Item despawned");
         JunkSpawner.Instance.Despawn(transform.parent);
     }
 
