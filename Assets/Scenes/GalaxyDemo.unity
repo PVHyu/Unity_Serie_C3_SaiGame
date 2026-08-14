@@ -1218,7 +1218,6 @@ MonoBehaviour:
   speed: 0.01
   minDistance: 1
   distance: 1
-  rotSpeed: 3
   target: {fileID: 1953717155}
 --- !u!1 &335021016
 GameObject:
@@ -1821,7 +1820,7 @@ GameObject:
   - component: {fileID: 538373391}
   - component: {fileID: 538373392}
   m_Layer: 0
-  m_Name: ShipShooting
+  m_Name: ObjShooting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2664,7 +2663,7 @@ GameObject:
   - component: {fileID: 806667790}
   - component: {fileID: 806667791}
   m_Layer: 0
-  m_Name: ShipMovement
+  m_Name: ObjMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2682,7 +2681,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1957149078}
   m_Father: {fileID: 1953717155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &806667791
@@ -2694,14 +2694,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 806667789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67d7cc7bf921a964fb667404c2a6cd2d, type: 3}
+  m_Script: {fileID: 11500000, guid: b1b1fa0f7dc5c1a48bdd51f363516e99, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShipFollowMouse
+  m_EditorClassIdentifier: Assembly-CSharp::ObjMoveForward
   targetPosition: {x: 0, y: 0, z: 0}
-  speed: 0.02
+  speed: 0.01
   minDistance: 1
   distance: 1
-  rotSpeed: 3
+  moveTarget: {fileID: 1957149078}
 --- !u!1 &844590547
 GameObject:
   m_ObjectHideFlags: 0
@@ -4365,7 +4365,6 @@ MonoBehaviour:
   speed: 0.005
   minDistance: 1
   distance: 1
-  rotSpeed: 3
   target: {fileID: 1953717155}
 --- !u!1 &1337215628
 GameObject:
@@ -5896,6 +5895,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4193582997719269}
+  - {fileID: 2069400737}
   - {fileID: 806667790}
   - {fileID: 538373391}
   - {fileID: 255848957}
@@ -5914,6 +5914,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54922e050245f954587bdfa8b8a4d128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShipCtrl
+--- !u!1 &1957149077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1957149078}
+  m_Layer: 0
+  m_Name: MoveTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1957149078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957149077}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 806667790}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1963735227
 GameObject:
   m_ObjectHideFlags: 0
@@ -6187,8 +6218,53 @@ MonoBehaviour:
   speed: 0.005
   minDistance: 1
   distance: 1
-  rotSpeed: 2
   target: {fileID: 1953717155}
+--- !u!1 &2069400736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2069400737}
+  - component: {fileID: 2069400738}
+  m_Layer: 0
+  m_Name: ObjLookAtTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2069400737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069400736}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1953717155}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069400738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069400736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be3ca7587db637c4583889154b05cd42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjLookAtMouse
+  targetPosition: {x: 0, y: 0, z: 0}
+  rotSpeed: 3
 --- !u!1 &2089638848
 GameObject:
   m_ObjectHideFlags: 0
