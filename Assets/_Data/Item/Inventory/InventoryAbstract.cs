@@ -16,6 +16,5 @@ public class InventoryAbstract : SaiMonoBehaviour
     {
         if (this.inventory != null) return;
         this.inventory = transform.parent.GetComponent<Inventory>();
-        Debug.LogWarning(transform.name + " LoadInventory", gameObject);
     }
 }
