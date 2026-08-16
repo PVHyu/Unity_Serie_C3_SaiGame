@@ -44,7 +44,7 @@ public class ItemDropSpawner : Spawner
             itemDropMore = Mathf.FloorToInt(itemRate);
             if (itemDropMore > 0)
             {
-                itemRate -= itemDropMore;
+                itemRate -= itemDropMore;  
                 for (int i = 0; i < itemDropMore; i++)
                 {
                     droppedItems.Add(item);
