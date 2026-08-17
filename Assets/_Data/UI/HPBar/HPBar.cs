@@ -20,7 +20,7 @@ public class HPBar : SaiMonoBehaviour
     {
         base.LoadComponents();
         this.LoadSliderHp();
-        // this.LoadFollowTarget();
+        this.LoadFollowTarget();
         // this.LoadSpawner();
     }
 
@@ -38,12 +38,12 @@ public class HPBar : SaiMonoBehaviour
         Debug.LogWarning(transform.name + ": LoadSliderHp", gameObject);
     }
 
-    // protected virtual void LoadFollowTarget()
-    // {
-    //     if (this.followTarget != null) return;
-    //     this.followTarget = transform.GetComponent<FollowTarget>();
-    //     Debug.LogWarning(transform.name + ": LoadFollowTarget", gameObject);
-    // }
+    protected virtual void LoadFollowTarget()
+    {
+        if (this.followTarget != null) return;
+        this.followTarget = transform.GetComponent<FollowTarget>();
+        Debug.LogWarning(transform.name + ": LoadFollowTarget", gameObject);
+    }
 
     protected virtual void HPShowing()
     {
