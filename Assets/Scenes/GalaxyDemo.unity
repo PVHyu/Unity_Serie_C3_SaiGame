@@ -1176,10 +1176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53ee3eef82d3d24a8809111574fb383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HPBar
-  shootableObjectCtrl: {fileID: 620643205}
+  shootableObjectCtrl: {fileID: 0}
   sliderHp: {fileID: 1232675614}
   followTarget: {fileID: 215594058}
-  spawner: {fileID: 0}
+  spawner: {fileID: 875947822}
 --- !u!1 &255848956
 GameObject:
   m_ObjectHideFlags: 0
@@ -4649,7 +4649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCtrl
   model: {fileID: 553605491}
-  despawn: {fileID: 1869962407}
+  despawn: {fileID: 0}
   shootableObject: {fileID: 11400000, guid: fc629f696a907bf4bbb63f9cf4293d17, type: 2}
   objShooting: {fileID: 558113254}
   objMovement: {fileID: 551516886}
@@ -6032,9 +6032,9 @@ Transform:
   - {fileID: 1840592037}
   - {fileID: 1183865615}
   - {fileID: 1153312482}
-  - {fileID: 2063299756}
   - {fileID: 300134376}
   - {fileID: 875947821}
+  - {fileID: 2063299756}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1427480890
@@ -7119,7 +7119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1869962409}
   - component: {fileID: 1869962408}
-  - component: {fileID: 1869962407}
+  - component: {fileID: 1869962410}
   m_Layer: 0
   m_Name: Despawn
   m_TagString: Untagged
@@ -7127,21 +7127,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1869962407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869962406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2206be14a4f6ff04ebb0f1a2c4fd64c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyDespawn
-  disLimit: 25
-  distance: 0
-  mainCam: {fileID: 519420032}
 --- !u!135 &1869962408
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7178,6 +7163,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1158580093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1869962410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869962406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659db76364a82e54b94f519ae727a61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MotherShipDespawn
+  disLimit: 25
+  distance: 0
+  mainCam: {fileID: 519420032}
 --- !u!1 &1891758788
 GameObject:
   m_ObjectHideFlags: 0
@@ -7900,7 +7900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063299755}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
