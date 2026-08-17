@@ -882,7 +882,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &178147130
 MonoBehaviour:
@@ -897,7 +897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9547169, g: 0.24318251, b: 0.24318251, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1058,8 +1058,9 @@ GameObject:
   - component: {fileID: 215594060}
   - component: {fileID: 215594059}
   - component: {fileID: 215594058}
+  - component: {fileID: 215594063}
   m_Layer: 5
-  m_Name: CanvasHP
+  m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1163,6 +1164,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 507, y: 285}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &215594063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215594057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53ee3eef82d3d24a8809111574fb383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HPBar
+  shootableObjectCtrl: {fileID: 837177989}
+  sliderHp: {fileID: 1232675614}
+  followTarget: {fileID: 215594058}
+  spawner: {fileID: 0}
 --- !u!1 &225079804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,8 +1211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShootableObjectDamReceiver
   sphereCollider: {fileID: 225079806}
-  hp: 2
-  hpMax: 2
+  hp: 10
+  hpMax: 10
   isDead: 0
   shootablObjectCtrl: {fileID: 837177989}
 --- !u!135 &225079806
@@ -3745,7 +3762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &806667790
 Transform:
   m_ObjectHideFlags: 0
@@ -4801,8 +4818,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1122065530
 GameObject:
@@ -5249,7 +5266,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 266627294}
   m_FillRect: {fileID: 178147129}
   m_HandleRect: {fileID: 266627293}
@@ -5257,7 +5274,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5275,7 +5292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlideHP
   slider: {fileID: 1232675613}
   maxHP: 100
-  currentHP: 70
+  currentHP: 100
 --- !u!1 &1232860121
 GameObject:
   m_ObjectHideFlags: 0
@@ -5553,7 +5570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1258138785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7416,7 +7433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4792453, g: 0.4792453, b: 0.4792453, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -7,7 +7,7 @@ public class SlideHP : BaseSlider
 {
     [Header("HP")]
     [SerializeField] protected float maxHP = 100;
-    [SerializeField] protected float currentHP = 70;
+    [SerializeField] protected float currentHP = 50;
 
     protected override void FixedUpdate()
     {
@@ -33,6 +33,6 @@ public class SlideHP : BaseSlider
 
     public virtual void SetCurrentHp(float currentHP)
     {
-        this.currentHP = maxHP;
+        this.currentHP = currentHP;
     }
 }
