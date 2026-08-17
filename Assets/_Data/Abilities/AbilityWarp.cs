@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class AbilityWarp : BaseAbility
 {
-    [Header("Warp")] 
+    [Header("Warp")]
     [SerializeField] protected Spawner spawner;
-    protected Vector4 keyDirection;
     [SerializeField] protected bool isWarping = false;
+    [SerializeField] protected float warpSpeed = 1f;
+    [SerializeField] protected float warpDistance = 2f;
+    protected Vector4 keyDirection;
     [SerializeField] protected Vector4 warpDirection;
-    [SerializeField] protected float warpSpeed;
 
     protected override void Update()
     {
@@ -75,9 +76,41 @@ public class AbilityWarp : BaseAbility
 
     protected virtual void WarpFinish()
     {
-        // this.MoveObj();
+        this.MoveObj();
         this.warpDirection.Set(0, 0, 0, 0);
         this.isWarping = false;
         this.Active();
+    }
+
+    protected virtual void MoveObj()
+    {
+        Transform obj = this.abilities.AbilityObjectCtrl.transform;
+        Vector3 newPos = obj.position;
+        if (this.warpDirection.x == 1) newPos.x -= this.warpDistance;
+        if (this.warpDirection.y == 1) newPos.x += this.warpDistance;
+        if (this.warpDirection.z == 1) newPos.y += this.warpDistance;
+        if (this.warpDirection.w == 1) newPos.y -= this.warpDistance;
+
+        Quaternion fxRot = this.GetFXQuaternion();
+        Transform fx = FXSpawner.Instance.Spawn(FXSpawner.impact, obj.position, fxRot);
+        fx.gameObject.SetActive(true);
+
+        obj.position = newPos;
+    }
+
+    protected virtual Quaternion GetFXQuaternion()
+    {
+        Vector3 vector = new Vector3();
+        if (this.warpDirection.x == 1) vector.z = 0;
+        if (this.warpDirection.y == 1) vector.z = 180;
+        if (this.warpDirection.z == 1) vector.z = -90;
+        if (this.warpDirection.w == 1) vector.z = 90;
+        
+        if (this.warpDirection.x == 1 && this.warpDirection.w == 1) vector.z = 45;
+        if (this.warpDirection.y == 1 && this.warpDirection.w == 1) vector.z = 135;
+        if (this.warpDirection.x == 1 && this.warpDirection.z == 1) vector.z = -45;
+        if (this.warpDirection.y == 1 && this.warpDirection.z == 1) vector.z = -135;
+
+        return Quaternion.Euler(vector);
     }
 }

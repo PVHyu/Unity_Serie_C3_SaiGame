@@ -1808,7 +1808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   isShooting: 0
-  shootDelay: 0.2
+  shootDelay: 0.1
   shootTimer: 0
 --- !u!1 &551516884
 GameObject:
@@ -3064,6 +3064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 955358096}
+  - component: {fileID: 955358097}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Untagged
@@ -3087,6 +3088,19 @@ Transform:
   - {fileID: 1174966273}
   m_Father: {fileID: 1953717155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &955358097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955358095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e595df3f8d216849b81ed6f21277173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Abilities
+  abilityObjectCtrl: {fileID: 1953717156}
 --- !u!1 &962474068
 GameObject:
   m_ObjectHideFlags: 0
@@ -3832,8 +3846,9 @@ MonoBehaviour:
   isReady: 0
   spawner: {fileID: 0}
   isWarping: 0
-  warpDirection: {x: 0, y: 0, z: 0, w: 0}
   warpSpeed: 0
+  warpDistance: 2
+  warpDirection: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1183865613
 GameObject:
   m_ObjectHideFlags: 0
