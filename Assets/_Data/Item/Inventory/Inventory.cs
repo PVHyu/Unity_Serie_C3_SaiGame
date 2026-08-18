@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 
 public class Inventory : SaiMonoBehaviour
 {
-    [SerializeField] protected int maxSlot = 70;
+    [SerializeField] protected int maxSlot = 7;
     [SerializeField] protected List<ItemInventory> items;
     public List<ItemInventory> Items => items;
 
@@ -12,8 +12,8 @@ public class Inventory : SaiMonoBehaviour
     {
         base.Start();
         this.AddItem(ItemCode.CopperSword, 1);
-        this.AddItem(ItemCode.IronOre, 6);
-        this.AddItem(ItemCode.GoldOre, 6);
+        this.AddItem(ItemCode.IronOre, 10);
+        this.AddItem(ItemCode.GoldOre, 10);
     }
 
     public virtual bool AddItem(ItemInventory itemInventory)
