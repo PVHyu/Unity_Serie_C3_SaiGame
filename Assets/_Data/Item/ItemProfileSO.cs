@@ -9,7 +9,7 @@ public class ItemProfileSO : ScriptableObject
     public string itemName = "no-name";
     public int defaultMaxStack = 7;
     // public bool canNotSendToInventory = false;
-    // public Sprite sprite;
+    public Sprite sprite;
     public List<ItemRecipe> upgradeLevels;
 
     public static ItemProfileSO FindByItemCode(ItemCode itemCode)
