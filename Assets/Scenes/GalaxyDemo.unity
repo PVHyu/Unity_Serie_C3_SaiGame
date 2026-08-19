@@ -951,6 +951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemCtrl
   itemDespawn: {fileID: 1969151590}
   itemInventory:
+    itemId: 
     itemProfile: {fileID: 11400000, guid: baa30601dcf33d0468ab5b51f0896280, type: 2}
     itemCount: 1
     maxStack: 7
@@ -3855,6 +3856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemCtrl
   itemDespawn: {fileID: 1244871283}
   itemInventory:
+    itemId: 
     itemProfile: {fileID: 11400000, guid: 711b9902a816c64409353deb507cd95e, type: 2}
     itemCount: 1
     maxStack: 7
@@ -4562,6 +4564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIItemInventory
   itemInventory:
+    itemId: 
     itemProfile: {fileID: 0}
     itemCount: 0
     maxStack: 7
@@ -6177,7 +6180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed0f617e6591ff49ab22d6557c9f9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemLooter
-  inventory: {fileID: 0}
+  inventory: {fileID: 720587401}
   _collider: {fileID: 1258632102}
   _rigidbody: {fileID: 1258632101}
 --- !u!54 &1258632101
@@ -8172,6 +8175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemCtrl
   itemDespawn: {fileID: 1297599417}
   itemInventory:
+    itemId: 
     itemProfile: {fileID: 11400000, guid: b2db8a543f83dca4db26052a1beed46f, type: 2}
     itemCount: 1
     maxStack: 7
