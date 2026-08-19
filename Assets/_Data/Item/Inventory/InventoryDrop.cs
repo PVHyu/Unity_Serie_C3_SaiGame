@@ -23,6 +23,6 @@ public class InventoryDrop : InventoryAbstract
 
         
         ItemDropSpawner.Instance.DropFromInventory(itemInventory, dropPos, transform.rotation);
-        this.inventory.Items.Remove(itemInventory);
+        if(itemInventory.itemCount == 0) this.inventory.Items.Remove(itemInventory);
     }
 }
