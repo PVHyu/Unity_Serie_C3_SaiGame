@@ -31,7 +31,7 @@ public class DragItem : SaiMonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         Debug.Log("OnBeginDrag");
         this.realParent = transform.parent;
-//        transform.SetParent(UIHotKeyCtrl.Instance.transform);
+        transform.SetParent(UIHotKeyCtrl.Instance.transform);
         this.image.raycastTarget = false;
     }
 
